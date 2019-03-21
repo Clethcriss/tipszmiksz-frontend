@@ -89,7 +89,10 @@ function LoggedInCase(props) {
     } else {
         return (<ul className="menu">
             <li>
-                <button type="button" className="button">Register</button>
+                <input type="email" placeholder="e-mail"/>
+            </li>
+            <li>
+                <input type="password" placeholder="password"/>
             </li>
             <li>
                 <LogInButton onClick={props.logIn}/>
