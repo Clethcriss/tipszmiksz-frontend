@@ -9,9 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar/>
-        <header className="App-header">
-          <Register/>
-        </header>
+        <Register/>
       </div>
     );
   }
