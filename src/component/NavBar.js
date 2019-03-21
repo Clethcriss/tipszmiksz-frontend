@@ -75,16 +75,7 @@ function GreetingsButton(props) {
 function LoggedInCase(props) {
     const isLoggedIn = props.isLoggedIn;
 
-    if (!isLoggedIn) {
-        return (<ul className="menu">
-            <li>
-                <button type="button" className="button">Register</button>
-            </li>
-            <li>
-                <LogInButton onClick={props.logIn}/>
-            </li>
-        </ul>);
-    } else {
+    if (isLoggedIn) {
         return (
             <ul className="menu">
                 <li>
@@ -95,7 +86,17 @@ function LoggedInCase(props) {
                 </li>
             </ul>
         );
+    } else {
+        return (<ul className="menu">
+            <li>
+                <button type="button" className="button">Register</button>
+            </li>
+            <li>
+                <LogInButton onClick={props.logIn}/>
+            </li>
+        </ul>);
     }
 }
 
 export default NavBar;
+
