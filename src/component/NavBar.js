@@ -118,11 +118,11 @@ function DropdownMenu(props) {
             <ul className="dropdown menu" data-dropdown-menu>
                 <li className="menu-text">TIPSZ MIKSZ</li>
                 <li>
-                    <a href="#">Menu</a>
+                    <a href="http://localhost:3000/#">Menu</a>
                     <ul className="sub menu vertical">
-                        <li><a href="#">Bid</a></li>
-                        <li><a href="#">Result</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="http://localhost:3000/#">Bid</a></li>
+                        <li><a href="http://localhost:3000/#">Result</a></li>
+                        <li><a href="http://localhost:3000/#">About</a></li>
                     </ul>
                 </li>
             </ul>

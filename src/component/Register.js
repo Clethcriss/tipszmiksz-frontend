@@ -5,9 +5,9 @@ export class Register extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: null,
-            email: null,
-            password: null
+            username: "",
+            email: "",
+            password: ""
         };
         this.register = this.register.bind(this);
     }
@@ -43,10 +43,16 @@ export class Register extends React.Component {
                 password: this.state.password
             })
         }).then(response => {return response.json()})
-            .then(function (data) {
+            .then(data => {
                 if(data.status === 500) {
                     alert(data.message);
+                    this.setState({email:""});
                 } else {
+                    this.setState({
+                        username: "",
+                        password: "",
+                        email: ""
+                    })
                     alert("Woohoo!");
                 }
             });
