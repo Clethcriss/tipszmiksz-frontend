@@ -30,13 +30,31 @@ export class Register extends React.Component {
     }
 
     register() {
-        alert(this.state.username + " " +  this.state.password + " " + this.state.email);
+        console.log("Username: " + this.state.username + "\nPassword: " +  this.state.password + "\nEmail: " + this.state.email);
+        fetch('http://localhost:8080/register/', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: this.state.email,
+                name: this.state.username,
+                password: this.state.password
+            })
+        }).then(response => {return response.json()})
+            .then(function (data) {
+                if(data.status === 500) {
+                    alert(data.message);
+                } else {
+                    alert("Woohoo!");
+                }
+            });
     }
 
     render() {
         return (
             <div>
-
                 <form id="register-form">
                     <div className="grid-container float-right">
                         <div className="grid-x grid-margin-y">
